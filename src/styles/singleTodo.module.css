@@ -1,0 +1,57 @@
+.single-todo {
+     background-color: rgba(137, 43, 226, 0.274);
+     border-radius: 5px;
+     padding: 0.5rem 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.todo-status-label {
+     cursor: pointer;
+     --label-height: 1.6rem;
+     display: inline-block;
+     height: var(--label-height);
+     aspect-ratio: 2/1;
+     border: 2px solid skyblue;
+     background-color: skyblue;
+     border-radius: 100vw;
+     position: relative;
+}
+
+.todo-status-label::after {
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-color: rgb(213, 151, 4);
+     content: '';
+     height: calc(var(--label-height) - 2px);
+     aspect-ratio: 1;
+     border-radius: 50%;
+     transition: left 400ms ease-in-out, background-color 400ms ease-in-out;
+}
+
+.todo-status-checkbox:checked+.todo-status-label::after {
+     left: 50%;
+     background-color: rgb(3, 136, 74);
+}
+
+
+.todo-status-checkbox {
+     display: none;
+}
+
+.single-todo svg {
+     font-size: 25px;
+     cursor: pointer;
+     margin-inline: 1rem;
+
+}
+
+.todo-delete-btn {
+     color: red;
+}
+
+.todo-edit-btn {
+     color: #00a6ed;
+}
